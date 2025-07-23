@@ -52,6 +52,8 @@
             font-size: 18px;
             background-color: var(--Azul);
             padding-bottom: 125px;
+            padding-left: 100px;
+            padding-right: 100px;
         }
 
 
@@ -63,6 +65,8 @@
             padding: 40px;
             flex-wrap: wrap;
             background-color: var(--Azul);
+            padding-left: 100px;
+            padding-right: 100px;
         }
 
         .texto {
@@ -98,11 +102,13 @@
         /* Seção de pontos positivos e negativos */
         .pontos {
             background: linear-gradient(to bottom, #9eccfa, #f8f3ea);
-            padding-top: 200px;
+            padding-top: 100px;
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
             gap: 40px;
+            padding-left: 300px;
+            padding-right: 300px;
         }
 
         .pontos h2 {
@@ -127,6 +133,52 @@
             color: #0b1957;
             line-height: 2;
         }
+
+        /* Esfera Politica */
+
+        .esferas {
+            background-color: var(--Bege);
+        }
+
+        .esf_politica{
+            text-align: center;
+            padding: 100px;
+            
+        }
+
+        #titulo_politica{
+            font-size: 100px;
+            font-family: "syne";
+        }
+
+        #texto_politica{
+            padding-top: 30px;
+            padding-bottom: 40px;
+            margin-left: 300px;
+            margin-right: 300px;
+            font-family: "syne mono";
+            font-size: 25px;
+        }
+
+        #botao_politica{
+            border-radius: 50px;
+            background-color: black;
+            color: white;
+            font-family: "syne mono";
+            text-align: center;
+            width: 400px;
+            height: 70px;
+            font-size: 25px;
+            transition: all 0.5s;
+        }
+
+        #botao_politica:hover{
+            background-color: var(--Bege);
+            color: #000;
+        }
+
+
+
 
         /* Footer */
         footer {
