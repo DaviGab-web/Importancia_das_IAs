@@ -1,0 +1,507 @@
+/* Importar estilos base */
+@import url('style_melhorado.css');
+
+/* Paleta de cores específica para Política */
+:root {
+    --political-primary: #8b5cf6;
+    --political-secondary: #a78bfa;
+    --political-accent: #7c3aed;
+    --political-light: #f3f4f6;
+    --political-dark: #4c1d95;
+    --political-gradient: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    --political-gradient-light: linear-gradient(135deg, #a78bfa, #8b5cf6);
+}
+
+/* Hero Section Política */
+.political-hero {
+    background: linear-gradient(135deg, var(--political-secondary) 0%, var(--political-light) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.political-particles {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(167, 139, 250, 0.1) 0%, transparent 50%);
+    animation: political-float 15s ease-in-out infinite;
+}
+
+@keyframes political-float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-20px) rotate(1deg); }
+    66% { transform: translateY(10px) rotate(-1deg); }
+}
+
+.political-hero .title-main {
+    background: var(--political-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.political-hero .title-highlight {
+    color: var(--political-dark);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    font-size: 0.875rem;
+    color: var(--gray-600);
+}
+
+.breadcrumb a {
+    color: var(--political-accent);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+    color: var(--political-primary);
+}
+
+.breadcrumb i {
+    font-size: 0.75rem;
+}
+
+/* Hero Stats */
+.hero-stats {
+    display: flex;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--political-accent);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    margin-top: var(--spacing-xs);
+}
+
+/* Political Card */
+.political-card {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-xl);
+    animation: float 6s ease-in-out infinite;
+}
+
+.political-card .card-icon {
+    font-size: 4rem;
+    color: var(--political-primary);
+}
+
+.political-pulse {
+    position: absolute;
+    inset: -20px;
+    border: 2px solid var(--political-accent);
+    border-radius: var(--radius-xl);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Navegação ativa */
+.nav-link.active {
+    color: var(--political-primary);
+    background-color: rgba(139, 92, 246, 0.1);
+}
+
+/* Seção de Impactos */
+.impacts-section {
+    padding: var(--spacing-3xl) 0;
+    background: var(--white);
+}
+
+.impacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-3xl);
+}
+
+.impact-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    transition: var(--transition-normal);
+    opacity: 0;
+    transform: translateY(30px);
+    position: relative;
+    overflow: hidden;
+}
+
+.impact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--political-gradient);
+    transform: scaleX(0);
+    transition: var(--transition-normal);
+}
+
+.impact-card:hover::before {
+    transform: scaleX(1);
+}
+
+.impact-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.impact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--political-secondary);
+}
+
+.impact-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--political-gradient);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.impact-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--political-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.impact-card p {
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+}
+
+.impact-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.feature {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.feature.positive {
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--success);
+}
+
+.feature.negative {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--error);
+}
+
+/* Seção de Desafios */
+.challenges-section {
+    padding: var(--spacing-3xl) 0;
+    background: var(--political-light);
+}
+
+.challenges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-3xl);
+}
+
+.challenge-item {
+    display: flex;
+    gap: var(--spacing-lg);
+    background: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+.challenge-item.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.challenge-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.challenge-number {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: var(--political-gradient);
+    color: var(--white);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+.challenge-content h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--political-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.challenge-content p {
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+/* Seção de Casos de Uso */
+.cases-section {
+    padding: var(--spacing-3xl) 0;
+    background: var(--white);
+}
+
+.cases-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: var(--spacing-3xl) auto 0;
+}
+
+.cases-timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--political-gradient);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: var(--spacing-2xl);
+    padding-left: 80px;
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+.timeline-item.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: var(--political-primary);
+    border: 4px solid var(--white);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-md);
+}
+
+.timeline-content {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--political-secondary);
+}
+
+.timeline-date {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--political-accent);
+    margin-bottom: var(--spacing-sm);
+}
+
+.timeline-content h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--political-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.timeline-content p {
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+/* Navegação entre Esferas */
+.sphere-navigation {
+    padding: var(--spacing-3xl) 0;
+    background: var(--political-light);
+}
+
+.sphere-navigation h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--political-dark);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.nav-spheres {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.sphere-nav-card {
+    background: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.sphere-nav-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sphere-nav-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+}
+
+.sphere-nav-card.economic:hover {
+    border-color: #10b981;
+}
+
+.sphere-nav-card.social:hover {
+    border-color: #f59e0b;
+}
+
+.sphere-nav-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto var(--spacing-lg);
+    color: var(--white);
+}
+
+.sphere-nav-card.economic .sphere-nav-icon {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.sphere-nav-card.social .sphere-nav-icon {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.sphere-nav-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--gray-800);
+}
+
+.sphere-nav-card p {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+}
+
+/* Responsividade específica */
+@media (max-width: 768px) {
+    .hero-stats {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+    
+    .political-card {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .impacts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .challenges-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .challenge-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .cases-timeline::before {
+        left: 15px;
+    }
+    
+    .timeline-item {
+        padding-left: 50px;
+    }
+    
+    .timeline-marker {
+        left: 5px;
+    }
+    
+    .nav-spheres {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-stats {
+        gap: var(--spacing-sm);
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .impact-card,
+    .challenge-item,
+    .timeline-content {
+        padding: var(--spacing-lg);
+    }
+}
+
