@@ -319,7 +319,7 @@
             </div>
             
             <div class="sphere-cta">
-              <a href="economica.html" class="btn-sphere">
+              <a href="economica.html" class="btn-spher">
                 <span>Explorar Economia</span>
                 <i data-lucide="arrow-right"></i>
               </a>
@@ -401,13 +401,6 @@
             <a href="economica.html">Econômica</a>
             <a href="social.html">Social</a>
           </div>
-          
-          <div class="link-group">
-            <h4>Recursos</h4>
-            <a href="#sobre">Sobre</a>
-            <a href="#contato">Contato</a>
-            <a href="#equipe">Equipe</a>
-          </div>
         </div>
       </div>
       
@@ -450,7 +443,8 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-          // Adiciona delay baseado no índice para animação escalonada
+
+     // Adiciona delay baseado no índice para animação escalonada
           setTimeout(() => {
             entry.target.classList.add('animate-in');
           }, index * 100);
