@@ -300,6 +300,7 @@ body {
 .points-section {
     padding: var(--spacing-3xl) 0;
     background: linear-gradient(to bottom, var(--secondary-blue), var(--background-light));
+    font-size: 20px;
 }
 
 .section-header {
@@ -315,7 +316,7 @@ body {
 }
 
 .section-subtitle {
-    font-size: 1.125rem;
+    font-size: 30px;
     color: var(--gray-600);
     max-width: 600px;
     margin: 0 auto;
@@ -429,7 +430,7 @@ body {
 
 .point-content p {
     color: var(--gray-600);
-    font-size: 0.875rem;
+    font-size: 20px;
     line-height: 1.5;
 }
 
