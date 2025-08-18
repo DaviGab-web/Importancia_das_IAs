@@ -134,6 +134,7 @@
 }
 
 .impacts-grid {
+    margin: 200px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--spacing-xl);
@@ -235,6 +236,7 @@
 }
 
 .challenges-grid {
+    margin: 200px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-xl);

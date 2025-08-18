@@ -213,6 +213,7 @@ body {
 }
 
 .title-main {
+    font-size: 48px;
     display: block;
     color: var(--black);
     background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
