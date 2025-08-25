@@ -1,0 +1,792 @@
+/* Importar estilos base */
+@import url('style_melhorado.css');
+
+/* Paleta de cores específica para Social */
+:root {
+    --social-primary: #f59e0b;
+    --social-secondary: #fbbf24;
+    --social-accent: #d97706;
+    --social-light: #fffbeb;
+    --social-dark: #92400e;
+    --social-gradient: linear-gradient(135deg, #f59e0b, #d97706);
+    --social-gradient-light: linear-gradient(135deg, #fbbf24, #f59e0b);
+}
+
+/* Hero Section Social */
+.social-hero {
+    background: linear-gradient(135deg, var(--social-secondary) 0%, var(--social-light) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.social-connections {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(217, 119, 6, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 10%, rgba(251, 191, 36, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 10% 90%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
+    animation: social-pulse 10s ease-in-out infinite;
+}
+
+@keyframes social-pulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.02); }
+}
+
+.social-hero .title-main {
+    background: var(--social-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.social-hero .title-highlight {
+    color: var(--social-dark);
+}
+
+/* Hero Impact */
+.hero-impact {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2xl);
+    margin-top: var(--spacing-xl);
+}
+
+.impact-circle {
+    flex-shrink: 0;
+    width: 150px;
+    height: 150px;
+    background: var(--white);
+    border: 4px solid var(--social-primary);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    animation: circle-pulse 3s ease-in-out infinite;
+}
+
+@keyframes circle-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.circle-content {
+    text-align: center;
+}
+
+.circle-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--social-accent);
+    line-height: 1;
+}
+
+.circle-label {
+    font-size: 0.75rem;
+    color: var(--gray-600);
+    margin-top: var(--spacing-xs);
+}
+
+.impact-stats {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.impact-stat {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: rgba(255, 255, 255, 0.8);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-full);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    font-size: 0.875rem;
+    color: var(--gray-700);
+}
+
+.impact-stat i {
+    color: var(--social-primary);
+}
+
+/* Social Network Visual */
+.social-network {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.network-node {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: var(--white);
+    border: 3px solid var(--social-primary);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--social-accent);
+    box-shadow: var(--shadow-lg);
+    animation: node-float 4s ease-in-out infinite;
+}
+
+.network-node.central {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: var(--social-gradient);
+    color: var(--white);
+    font-size: 2rem;
+    z-index: 2;
+}
+
+.network-node.node-1 {
+    top: 20px;
+    right: 20px;
+    animation-delay: 0.5s;
+}
+
+.network-node.node-2 {
+    bottom: 20px;
+    right: 20px;
+    animation-delay: 1s;
+}
+
+.network-node.node-3 {
+    bottom: 20px;
+    left: 20px;
+    animation-delay: 1.5s;
+}
+
+.network-node.node-4 {
+    top: 20px;
+    left: 20px;
+    animation-delay: 2s;
+}
+
+@keyframes node-float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.connection-line {
+    position: absolute;
+    background: var(--social-secondary);
+    height: 2px;
+    transform-origin: center;
+    opacity: 0.6;
+    animation: line-pulse 3s ease-in-out infinite;
+}
+
+.connection-line.line-1 {
+    width: 100px;
+    top: 50px;
+    right: 50px;
+    transform: rotate(45deg);
+    animation-delay: 0.2s;
+}
+
+.connection-line.line-2 {
+    width: 100px;
+    bottom: 50px;
+    right: 50px;
+    transform: rotate(-45deg);
+    animation-delay: 0.4s;
+}
+
+.connection-line.line-3 {
+    width: 100px;
+    bottom: 50px;
+    left: 50px;
+    transform: rotate(45deg);
+    animation-delay: 0.6s;
+}
+
+.connection-line.line-4 {
+    width: 100px;
+    top: 50px;
+    left: 50px;
+    transform: rotate(-45deg);
+    animation-delay: 0.8s;
+}
+
+@keyframes line-pulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+/* Navegação ativa */
+.nav-link.active {
+    color: var(--social-primary);
+    background-color: rgba(245, 158, 11, 0.1);
+}
+
+/* Seção de Áreas de Impacto */
+.impact-areas-section {
+    padding: var(--spacing-3xl) 0;
+    background: var(--white);
+}
+
+.areas-grid {
+    margin: 200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-3xl);
+}
+
+.area-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    transition: var(--transition-normal);
+    opacity: 0;
+    transform: translateY(30px);
+    position: relative;
+    overflow: hidden;
+}
+
+.area-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    transform: scaleX(0);
+    transition: var(--transition-normal);
+}
+
+.area-card.health::before {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.area-card.education::before {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.area-card.accessibility::before {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.area-card.security::before {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.area-card:hover::before {
+    transform: scaleX(1);
+}
+
+.area-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.area-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--social-secondary);
+}
+
+.area-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.area-card.health .area-icon {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.area-card.education .area-icon {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.area-card.accessibility .area-icon {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.area-card.security .area-icon {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.area-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--social-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.area-card p {
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+}
+
+.area-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.875rem;
+    color: var(--gray-700);
+}
+
+.benefit-item i {
+    color: var(--success);
+    font-size: 1rem;
+}
+
+/* Seção de Benefícios vs Preocupações */
+.benefits-concerns-section {
+    padding: var(--spacing-3xl) 0;
+    background: var(--social-light);
+}
+
+.balance-container {
+    margin-top: var(--spacing-3xl);
+    display: flex;
+    justify-content: center;
+}
+
+.balance-scale {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+}
+
+.scale-fulcrum {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 40px solid var(--social-accent);
+}
+
+.scale-arm {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 4px;
+    background: var(--social-primary);
+    border-radius: var(--radius-sm);
+}
+
+.scale-side {
+    position: absolute;
+    bottom: 60px;
+    width: 280px;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.scale-side.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.benefits-side {
+    left: 0;
+}
+
+.concerns-side {
+    right: 0;
+}
+
+.scale-plate {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-lg);
+    border: 2px solid var(--social-secondary);
+}
+
+.scale-plate h3 {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--social-dark);
+    margin-bottom: var(--spacing-lg);
+}
+
+.scale-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.scale-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.875rem;
+    color: var(--gray-700);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    transition: var(--transition-fast);
+}
+
+.scale-item:hover {
+    background: var(--gray-100);
+}
+
+.scale-item i {
+    color: var(--social-primary);
+}
+
+/* Seção de Casos de Sucesso */
+.success-cases-section {
+    padding: var(--spacing-3xl) 0;
+    background: var(--white);
+}
+
+.cases-carousel {
+    position: relative;
+    margin-top: var(--spacing-3xl);
+    height: 400px;
+    overflow: hidden;
+}
+
+.case-card {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-2xl);
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    transform: translateX(100px);
+    transition: var(--transition-slow);
+}
+
+.case-card.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.case-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--social-light);
+    border-radius: var(--radius-lg);
+}
+
+.case-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--social-gradient);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 2rem;
+}
+
+.case-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--social-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.case-category {
+    font-size: 0.875rem;
+    color: var(--social-primary);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+}
+
+.case-description {
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+}
+
+.case-impact {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--social-light);
+    border-radius: var(--radius-lg);
+}
+
+.impact-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--social-accent);
+}
+
+.impact-label {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+}
+
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.carousel-btn {
+    width: 40px;
+    height: 40px;
+    background: var(--social-primary);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.carousel-btn:hover {
+    background: var(--social-accent);
+    transform: scale(1.1);
+}
+
+.carousel-indicators {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    background: var(--gray-300);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.indicator.active {
+    background: var(--social-primary);
+}
+
+/* Navegação entre Esferas */
+.sphere-navigation {
+    padding: var(--spacing-3xl) 0;
+    background: var(--social-light);
+}
+
+.sphere-navigation h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--social-dark);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.nav-spheres {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.sphere-nav-card {
+    background: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.sphere-nav-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sphere-nav-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+}
+
+.sphere-nav-card.political:hover {
+    border-color: #8b5cf6;
+}
+
+.sphere-nav-card.economic:hover {
+    border-color: #10b981;
+}
+
+.sphere-nav-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto var(--spacing-lg);
+    color: var(--white);
+}
+
+.sphere-nav-card.political .sphere-nav-icon {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.sphere-nav-card.economic .sphere-nav-icon {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.sphere-nav-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--gray-800);
+}
+
+.sphere-nav-card p {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+}
+
+/* Responsividade específica */
+@media (max-width: 768px) {
+    .hero-impact {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+        text-align: center;
+    }
+    
+    .social-network {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .network-node {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .network-node.central {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .balance-scale {
+        height: auto;
+    }
+    
+    .scale-arm {
+        display: none;
+    }
+    
+    .scale-side {
+        position: relative;
+        width: 100%;
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    .benefits-side,
+    .concerns-side {
+        left: auto;
+        right: auto;
+    }
+    
+    .case-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .future-timeline {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .timeline-track {
+        display: none;
+    }
+    
+    .future-milestone:nth-child(even) .milestone-content,
+    .future-milestone:nth-child(odd) .milestone-content {
+        margin: var(--spacing-lg) auto;
+        text-align: center;
+    }
+    
+    .milestone-marker {
+        position: relative;
+        margin: 0 auto var(--spacing-md);
+    }
+    
+    .future-milestone:nth-child(1) .milestone-marker,
+    .future-milestone:nth-child(2) .milestone-marker,
+    .future-milestone:nth-child(3) .milestone-marker,
+    .future-milestone:nth-child(4) .milestone-marker {
+        left: auto;
+    }
+    
+    .nav-spheres {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .impact-circle {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .circle-number {
+        font-size: 1.25rem;
+    }
+    
+    .area-card,
+    .scale-plate,
+    .case-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .milestone-content {
+        max-width: 100%;
+    }
+}
+
