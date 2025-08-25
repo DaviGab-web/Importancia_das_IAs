@@ -12,6 +12,11 @@
     --economic-gradient-light: linear-gradient(135deg, #34d399, #10b981);
 }
 
+.navbar {
+  background: rgba(255, 255, 255, 0.9);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
 /* Hero Section Econômica */
 .economic-hero {
     background: linear-gradient(135deg, var(--economic-secondary) 0%, var(--economic-light) 100%);
@@ -622,3 +627,7 @@
     }
 }
 
+.navbar {
+  background: rgba(255, 255, 255, 0.9);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
